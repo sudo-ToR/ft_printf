@@ -24,13 +24,18 @@ int ft_printf(const char *str, ...)
 		if (*str == '%')
 		{
 			str++;
-			if (*(str) == '%')
-			{
+			if (*(str) == '%' && str++)
 				ft_putchar('%');
-				str++;
-			}
 			else if ((*(str) == 'd' ||  *(str) == 'i') && str++)
-				i = ft_putnbr_base_d(va_arg(ap, int), "0123456789");
+				i += ft_putnbr_base_d(va_arg(ap, int), "0123456789");
+			else if (*str == 'x' && str++)
+				i += ft_putnbr_base(va_arg(ap, int), "0123456789abcdef");
+			else if (*str == 'X' && str++)
+				i += ft_putnbr_base(va_arg(ap, int), "0123456789ABCDEF");
+			else if (*str == 'u' && str++)
+				i += ft_putnbr_base(va_arg(ap, int), "0123456789");
+			else if (*str == 'c' && str++ && i++)
+				ft_putchar(va_arg(ap, int));
 		}
 	}
 	va_end(ap);
