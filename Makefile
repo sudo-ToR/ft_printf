@@ -6,11 +6,11 @@
 #    By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/16 12:12:45 by lnoirot           #+#    #+#              #
-#    Updated: 2019/11/16 16:58:01 by lnoirot          ###   ########.fr        #
+#    Updated: 2019/11/20 20:03:24 by lnoirot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= basic_functions.c ft_printf.c
+SRCS	= basic_functions.c ft_printf.c basics_functions_1.c ft_count.c
 
 OBJS	= ${SRCS:.c=.o}
 

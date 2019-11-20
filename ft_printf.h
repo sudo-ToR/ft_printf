@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:07:11 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/11/16 19:22:12 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/11/20 20:06:15 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,9 @@ int		ft_putnbr_base(int n, char *base);
 int		ft_putnbr_base_d(int n, char *base);
 void	ft_putchar(char c);
 int		ft_putstr_m(char *str);
-
+int		ft_putnbr_p(void *n);
+int		ft_atoi(const char *nptr);
+int		ft_isdigit(int c);
+void	ft_count_int(int * length, char *str, int arg);
+int		ft_putnbr_base_d_count(int arg);
 #endif

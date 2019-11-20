@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:38:50 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/11/16 19:30:24 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/11/20 19:59:28 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,27 @@ int		main()
 	ft_printf("mine = %c\n", 132);
 	printf("\n");
 
+	//tests avec plusieurs flags
 	printf("real = %d\t%c\tbonjour les gens\n", 21234, 'z');
 	ft_printf("mine = %d\t%c\tbonjour les gens\n", 21234, 'z');
+	printf("real = \t\tc[i] = ptr(\"%%d\\t%%%%%ds\\t\\t\\t: |%%%ds|\\n\", i, \"Hello World!\"); i++;\n", -16, -16);
+	ft_printf("mine = \t\tc[i] = ptr(\"%%d\\t%%%%%ds\\t\\t\\t: |%%%ds|\\n\", i, \"Hello World!\"); i++;\n", -16, -16);
+	printf("\n");
 
+	char *adress_test = NULL;
+
+	//test avec p
+	printf("tests avec p\n");
+	printf("real = %p\n", adress_test);
+	ft_printf("mine = %p\n", adress_test);
+	printf("\n");
+
+	//tests avec -
+	printf("tests avec '-'\n");
+	printf("real = %-20c ceci est un test\n", 42);
+	ft_printf("mine = %-20c ceci est un test\n", 42);
+	printf("\n");
+
+	//test avec 0
+	printf("real = %045d", 42);
 }

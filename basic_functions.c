@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:00:02 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/11/16 19:21:51 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/11/20 20:13:01 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,34 @@ int		ft_putnbr_base_d(int n, char *base)
 	}
 	else
 	{
-		l += ft_putnbr_base(nbr / length, base);
-		l += ft_putnbr_base(nbr % length, base);
+		l += ft_putnbr_base_d(nbr / length, base);
+		l += ft_putnbr_base_d(nbr % length, base);
+	}
+	return (l);
+}
+
+int		ft_putnbr_p(void  *n)
+{
+	int				length;
+	int				l;
+	long long int	nb;
+	char 			*base;
+
+	nb = (long long int)n;
+	base = "0123456789abcdef";
+	length = 0;
+	l = 0;
+	while (base[length])
+		length++;
+	if (nb < length)
+	{
+		ft_putchar(base[nb]);
+		return (1);
+	}
+	else
+	{
+		l += ft_putnbr_base(nb / length, base);
+		l += ft_putnbr_base(nb % length, base);
 	}
 	return (l);
 }
