@@ -12,40 +12,50 @@
 
 #include "ft_printf.h"
 
-int		ft_putnbr_base_d_count(int arg)
+int		ft_count_xXu(int arg)
 {
-	char			*base;
+	int		ret;
+
+	ret = 0;
+	while ((unsigned int)arg > 0)
+	{
+		ret++;
+		arg /= 10;
+	}
+	return (ret);
+}
+
+int		ft_count_d(int arg)
+{
 	unsigned int	nbr;
 	int				ret;
 
-	base = "0123456789";
+	ret = 0;
 	if (arg < 0)
 		nbr = -arg;
 	else
 		nbr = arg;
-	if (nbr < 10)
-		return (1);
-	else
+	while (nbr > 0)
 	{
-		ret += ft_putnbr_base_d_count(nbr / 10);
-		ret += ft_putnbr_base_d_count(nbr % 10);
+		ret++;
+		nbr /= 10; 
 	}
+		return (ret);
 }
 
-void	ft_count_int(int *length, char *str, int arg)
+int		ft_count_int(char *str, int arg)
 {
+	int		length;
+
+	length = 0;
 	if (*str == 'd' ||  *str == 'i')
-		*length = ft_putnbr_base_d_count(arg);
+		length = ft_count_d(arg);
 	if (*str == 'x')
-		i += ft_putnbr_base(arg, "0123456789abcdef");
+		length = ft_putnbr_base(arg, "0123456789abcdef");
 	if (*str == 'X')
-		i += ft_putnbr_base(arg, "0123456789ABCDEF");
+		length = ft_putnbr_base(arg, "0123456789ABCDEF");
 	if (*str == 'u')
-		i += ft_putnbr_base(arg, "0123456789");
-	if (*str == 'c')
-	{
-		ft_putchar(arg);
-		i++;
-	}
+		length = ft_putnbr_base(arg, "0123456789");
+	return (length);
 }
 
