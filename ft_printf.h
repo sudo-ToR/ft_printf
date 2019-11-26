@@ -25,7 +25,6 @@ int		ft_putstr_m(char *str);
 int		ft_putnbr_p(void *n);
 int		ft_atoi(const char *nptr);
 int		ft_isdigit(int c);
-int		ft_count_int(char *str, int arg);
-int		ft_count_d(int arg);
-
+void	ft_count_int(int * length, char *str, int arg);
+int		ft_putnbr_base_d_count(int arg);
 #endif
