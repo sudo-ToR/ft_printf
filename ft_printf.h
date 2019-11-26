@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:07:11 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/11/20 20:06:15 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/11/26 18:52:21 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int		ft_putnbr_p(void *n);
 int		ft_atoi(const char *nptr);
 int		ft_isdigit(int c);
 void	ft_count_int(int * length, char *str, int arg);
-int		ft_putnbr_base_d_count(int arg);
+int		ft_count_d(int arg);
 #endif
