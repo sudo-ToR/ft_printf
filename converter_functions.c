@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:18:19 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/09 19:19:26 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/18 13:42:55 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		ft_converter_d(char *str, va_list ap)
 	int arg;
 	int	minus;
 	int prec;
-	
+
 	ret = 0;
 	minus = 0;
 	if (*str == '-' && (minus = 1) && str++)
@@ -55,14 +55,13 @@ int		ft_converter_d(char *str, va_list ap)
 		prec = va_arg(ap, int);
 	else
 		prec = ft_atoi(str);
-	if (prec < 0 && (minus = 1))
-		prec *= -1;
+	prec *= (prec < 0 && (minus = 1)) ? -1 : 1;
 	while ((*str != '0' && ft_isdigit(*str)) || *str == '*')
 		str++;
 	if ((*str == '.' || (minus != 1 && *str == '0')))
-		return (ret += flag_0(str, prec, minus, ap));
+		return (ret += flag_0(str + 1, prec, minus, ap));
 	arg = va_arg(ap, int);
-	while (minus == 0 && --prec > ft_count_d(arg))
+	while (minus == 0 && --prec >= ft_count_d(arg))
 		ret += write(1, " ", 1);
 	ret += ft_putnbr_base_d(arg, "0123456789");
 	while (ret++ < prec && prec > ft_count_d(arg))
