@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 16:18:03 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/09 16:52:14 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/18 16:59:35 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,11 @@ int		ft_is_converter(char c)
 		|| c == 'u' || c == 'x' || c == 'X' || c == '%')
 		return (1);
 	return (0);
+}
+
+int		ABS(int *x)
+{
+	if (*x < 0)
+		return (-*x);
+	return (*x);
 }
