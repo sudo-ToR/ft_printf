@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:00:02 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/09 18:01:56 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/20 18:28:14 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,7 @@ int		ft_putnbr_base_d(int n, char *base)
 	length = 0;
 	l = 0;
 	if (n < 0)
-	{
-		ft_putchar('-');
 		nbr = -n;
-	}
 	else
 		nbr = n;
 	while (base[length])

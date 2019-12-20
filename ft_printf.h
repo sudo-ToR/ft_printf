@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:07:11 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/18 16:59:08 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/20 20:34:24 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int		ft_is_converter(char c);
 int		ft_converter_c(char *str, va_list ap);
 int		ft_converter_p(char *str, va_list ap);
 int		ft_converter_d(char *str, va_list ap);
-int		flag_0(char *str, int prec, int minus, va_list ap);
+int		ft_star(va_list ap, char *str, int *number, int *nb, int minus);
+int		ft_aff_d(va_list ap, int prec, int len, int zero, int minus);
 int		ABS(int *x);
 
 #endif

@@ -6,51 +6,44 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 16:40:14 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/18 17:51:47 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/20 20:43:50 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
-
-int		flag_0_bis(char *str, int *ret, int prec, int l)
+int		ft_star(va_list ap, char *str, int *number, int *nb, int minus)
 {
-	while (*str == '0')
-		str++;
-	if ((*str == 'd' || *str == 'i') && prec != 0 && l != 0)
-		*ret += write(1, "0", 1);
-	else if (prec == 0 && l == 0)
-		return (0);
-	else
-		return (write(1, "0", 1));
+	minus += 0;
+	if (*(str - 1) != '.')
+		*number = va_arg(ap, int);
+	if (*(str + 2) == '*')
+		*nb = va_arg(ap, int);
+	if (*nb < 0 || (*number < 0 && (*number *= -1)))
+		return(1);
 	return (0);
 }
 
-int		flag_0(char *str, int prec, int minus, va_list ap)
+int		ft_aff_d(va_list ap, int prec, int len, int zero, int minus)
 {
-	int r;
-	int l;
-	int a;
+	int ret;
+	int nb_len;
+	int arg;
 
-	r = 0;
-	l = (*str == '*') ? va_arg(ap, int) : ft_atoi(str);
-	(a = va_arg(ap, int) < 0) ? (r += write(1, "-", 1) && ABS(&a)) : 1;
-	if (prec == 0 && a == 0 && l == 0 && *(str - 1) != '0')
-		return (r);
-	(*(str - 1) == '0' && a == 0) ? flag_0_bis(str, &r, prec, l) : 1;
-	while (a == 0 && l == 0 && prec-- > 0)
-		r += write(1, " ", 1);
-	if (prec == 0 && l == 0 && a == 0)
-		return (*(str - 1) == '0' ? ft_putnbr_base_d(a, "0123456789") : 0);
-	prec -= (l == 0) ? ft_count_d(a) : ABS(&l);
-	l -= ft_count_d(a);
-	while (minus == 0 && prec > 0 && (prec--))
-		r += write(1, " ", 1);
-	while (l > 0 && l--)
-		r += write(1, "0", 1);
-	r += (prec < 0 && l < 0 && a == 0 && *(str - 1) != '0') ? 0 :
-		ft_putnbr_base_d(a, "0123456789");
-	while (prec-- > 0 && minus == 1)
-		r += write(1, " ", 1);
-	return (r);
+	ret = 0;
+	arg = va_arg(ap, int);
+	prec *= (prec < 0) ? -1 : 1;
+	nb_len = ft_count_d(arg);
+	if (arg < 0 && (nb_len += 1))
+		ret += write(1, "-", 1);
+	prec -= len;
+	//printf("len = %d\t prec = %d\t zero = %d\t minus  = %d\n", len, prec, zero, minus);
+	while (prec - nb_len > 0 && prec-- && (minus == 0 || minus == 2))
+		ret += write(1, " ", 1);
+	while (zero-- > nb_len || (len > nb_len && len--))
+		ret += write(1, "0", 1);
+	if (arg == 0 && minus > 1 && len == 0)
+		return (ret);
+	ret += ft_putnbr_base_d(arg, "0123456789");
+	return (ret);
 }
