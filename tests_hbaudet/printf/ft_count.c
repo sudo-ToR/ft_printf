@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 19:32:19 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/17 15:57:36 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/22 15:21:10 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ int		ft_count_d(int arg)
 	if (arg == 0)
 		return (1);
 	if (arg < 0)
+	{
 		nbr = - arg;
+		ret++;
+	}
 	else
 		nbr = arg;
 	while (nbr > 0)

@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:07:11 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/20 20:34:24 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/22 13:45:27 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@
 
 # include <unistd.h>
 # include <stdarg.h>
+
+typedef struct	s_flag
+{
+	int zero;
+	int minus;
+	int width;
+	int prec;
+	int arg;
+	int flags;
+}				t_flag;
 
 int		ft_printf(const char *str, ...);
 int		ft_putnbr_base(int n, char *base);
@@ -33,8 +43,7 @@ int		ft_is_converter(char c);
 int		ft_converter_c(char *str, va_list ap);
 int		ft_converter_p(char *str, va_list ap);
 int		ft_converter_d(char *str, va_list ap);
-int		ft_star(va_list ap, char *str, int *number, int *nb, int minus);
-int		ft_aff_d(va_list ap, int prec, int len, int zero, int minus);
-int		ABS(int *x);
+t_flag	ft_fill_struct(char *str, va_list ap);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 12:14:02 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/20 20:42:29 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/22 21:18:39 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 int		main()
 {
 	char *str;
-	str = NULL; 
-	printf("real = |%*.*d|\n",  2, -1,0);
-	ft_printf("mine = |%*.*d|\n", 2, -1, 0);
+	str = NULL;
+	int	a = -3;
+		printf("real = |%010.11d|\n", -42);
+		ft_printf("mine = |%010.11d|\n", -42);
 }
