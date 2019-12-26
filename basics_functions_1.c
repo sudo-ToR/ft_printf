@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 16:18:03 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/18 16:59:35 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/26 19:42:01 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,13 @@ int		ft_isdigit(int c)
 
 int		ft_is_converter(char c)
 {
-	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' 
+	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
 		|| c == 'u' || c == 'x' || c == 'X' || c == '%')
 		return (1);
 	return (0);
 }
 
-int		ABS(int *x)
+int		abs(int x)
 {
-	if (*x < 0)
-		return (-*x);
-	return (*x);
+	return ((x < 0) ? -x : x);
 }

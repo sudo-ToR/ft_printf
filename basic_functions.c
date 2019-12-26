@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:00:02 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/20 18:28:14 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/26 13:02:26 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ int		ft_putnbr_base_d(int n, char *base)
 	return (l);
 }
 
-int		ft_putnbr_p(void  *n)
+int		ft_putnbr_p(void *n)
 {
 	int				length;
 	int				l;
 	long long int	nb;
-	char 			*base;
+	char			*base;
 
 	nb = (long long int)n;
 	base = "0123456789abcdef";
