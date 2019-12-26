@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 19:32:19 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/22 15:21:10 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/26 14:46:43 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_strlen(char *str)
 {
 	int len;
-	
+
 	len = 0;
 	while (str[len])
 		len++;
@@ -32,7 +32,7 @@ int		ft_count_d(int arg)
 		return (1);
 	if (arg < 0)
 	{
-		nbr = - arg;
+		nbr = -arg;
 		ret++;
 	}
 	else
@@ -45,7 +45,7 @@ int		ft_count_d(int arg)
 	return (ret);
 }
 
-int		ft_count_xXu(int n, char *base)
+int		ft_count_xu(int n, char *base)
 {
 	unsigned int	length;
 	int				l;
@@ -64,9 +64,8 @@ int		ft_count_xXu(int n, char *base)
 	return (l);
 }
 
-int		ft_count_p(void  *n)
+int		ft_count_p(void *n)
 {
-
 	int				l;
 	long long int	nb;
 
@@ -84,7 +83,7 @@ int		ft_count_p(void  *n)
 
 void	ft_count_int(int *length, char *str, int arg)
 {
-	if (*str == 'd' ||  *str == 'i')
+	if (*str == 'd' || *str == 'i')
 		*length = ft_count_d(arg);
 	if (*str == 'x')
 		*length += ft_putnbr_base(arg, "0123456789abcdef");
@@ -98,4 +97,3 @@ void	ft_count_int(int *length, char *str, int arg)
 		*length += 1;
 	}
 }
-
