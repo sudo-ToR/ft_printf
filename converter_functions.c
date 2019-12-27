@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 16:18:19 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/26 20:56:50 by lnoirot          ###   ########.fr       */
+/*   Updated: 2019/12/27 21:03:52 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,10 @@ int		ft_converter_d(char *str, va_list ap)
 	ft_converter_d_pt1(&stock);
 	while (stock.width-- > 0)
 		ret += write(1, "0", 1);
-	//printf("%d\t%d\t%d\t%d\n", stock.arg, stock.flag, stock.pre, stock.flag);
-	if ((stock.arg != 0 || (stock.flag == 0 && stock.pre != 0)) || (stock.star == -1))
+	//printf("%d\t%d\t%d\t%d\n", stock.arg, stock.flag, stock.pre, stock.star);
+	if (!(stock.star) && ((!(stock.star) && (stock.arg != 0)) || (stock.flag == 0 && stock.pre)))
+		ret += ft_putnbr_base_d(stock.arg, "0123456789");
+	else if (stock.star > 0)
 		ret += ft_putnbr_base_d(stock.arg, "0123456789");
 	while (stock.min-- > 0)
 		ret += write(1, " ", 1);
