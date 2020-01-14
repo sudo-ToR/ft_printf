@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 12:14:02 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/28 21:19:32 by lnoirot          ###   ########.fr       */
+/*   Updated: 2020/01/14 23:05:32 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int		main()
 {
 	char *str;
-	str = NULL;
-	printf("real = |%03.0u|\n", 4);
-	ft_printf("mine = |%0.3u|\n", 4);
+	str = "Hello World!";
+	printf("%.*xF%0d%%ubXCyvWWd%X\n", 5, 0, 2147483647, 0);
+	ft_printf("%.*xF%0d%%ubXCyvWWd%X\n", 5, 0, 2147483647, 0);
 }

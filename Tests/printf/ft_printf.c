@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:15:35 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/28 19:54:46 by lnoirot          ###   ########.fr       */
+/*   Updated: 2020/01/14 22:44:24 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ void	ft_converter_selector(char *str, int *ret, va_list ap, int j)
 	if (str[j] == 'c')
 		*ret += ft_converter_c(str, ap, 0);
 	else if (str[j] == 's')
-		return ;
+		*ret += ft_converter_s(str, ap);
 	else if (str[j] == 'p')
 		*ret += ft_converter_p(str, ap);
 	else if (str[j] == 'd' || str[j] == 'i')
 		*ret += ft_converter_d(str, ap);
 	else if (str[j] == 'x' || str[j] == 'X' || str[j] == 'u')
-		ft_converter_xu(str, ap, str[j]);
+		*ret += ft_converter_xu(str, ap, str[j]);
 	else if (str[j] == '%')
-		ret += ft_converter_c(str, ap, 1);
+		*ret += ft_converter_c(str, ap, 1);
 }
 
 int		ft_printf(const char *str, ...)

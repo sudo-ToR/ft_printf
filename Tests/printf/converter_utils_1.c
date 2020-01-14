@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/26 14:32:18 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/28 18:44:22 by lnoirot          ###   ########.fr       */
+/*   Updated: 2020/01/14 21:23:33 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,14 @@ void	ft_fill_struct_star_pt2(t_flag *stock)
 	if ((!(stock->arg) && (stock->width < 0) && stock->flag
 		&& stock->min && (stock->star = 1)))
 		stock->min--;
+}
+
+void	ft_converter_s_pt1(char **tmp, va_list ap, t_flag *stock)
+{
+	*tmp = va_arg(ap, char *);
+	if (!(*tmp))
+		*tmp = "(null)";
+	if ((stock->width <= 0 && !(stock->flag))
+		|| (stock->width > ft_strlen(*tmp)) || stock->width < 0)
+		stock->width = ft_strlen(*tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: lnoirot <lnoirot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:00:02 by lnoirot           #+#    #+#             */
-/*   Updated: 2019/12/28 20:06:01 by lnoirot          ###   ########.fr       */
+/*   Updated: 2020/01/14 22:40:26 by lnoirot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int		ft_putstr_m(char *str, int *i)
 	int j;
 
 	j = 0;
+	if (str == NULL)
+		return (j);
 	while (str[j] && str[j] != '%')
 	{
 		ft_putchar(str[j]);
